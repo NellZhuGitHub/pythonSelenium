@@ -17,8 +17,10 @@ class TestGanjiHome(unittest.TestCase):
 
     def setUp(self):
         self.driver = BrowserEngine.get_driver()
+        print(self.driver)
         self.homeProxy = GanjiHomeProxy()
         self.driver.get(self.url)
+
 
     def tearDown(self):
         self.driver.quit()
@@ -41,7 +43,7 @@ class TestGanjiHome(unittest.TestCase):
         self.assertEqual(res, True)
 
 
-"""
+
 if __name__ == "__main__":
     #unittest.main()
     suite = unittest.TestSuite()
@@ -51,4 +53,3 @@ if __name__ == "__main__":
     suite.addTests(tests)
     runner1 = unittest.TextTestRunner(verbosity=2)
     runner1.run(suite) 
-"""

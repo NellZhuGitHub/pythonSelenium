@@ -19,6 +19,7 @@ class BrowserEngine(object):
     __driver = None
 
     dir = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+    print(dir)
     chrome_driver_path = dir + '/tools/chromedriver.exe'
     ie_driver_path = dir + '/tools/IEDriverServer.exe'
 
@@ -39,9 +40,16 @@ class BrowserEngine(object):
 
             # imlicitlyWait(隐式等待), 在指定的时间范围内, 不断查找元素, 直到查到元素或者超时, 特点是必须等待整个页面加载完成
             self.__driver.implicitly_wait(10)
+        return self.__driver
 
     @classmethod
     def quit_driver(self):
         if self.__driver:
             self.__driver.quite()
             self.__driver = None
+"""
+if __name__ == "__main__":
+    c = BrowserEngine
+    d = c.get_driver()
+    print(d)
+"""

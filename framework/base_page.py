@@ -8,6 +8,7 @@ from read_ini import read_ini
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.select import Select        # select元素操作类
 from selenium.webdriver.common.keys import Keys
 import time
 import os, sys
